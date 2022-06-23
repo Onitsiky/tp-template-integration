@@ -1107,6 +1107,7 @@ progress {
 @media (min-width: 768px) {
   .col-md {
     flex: 1 0 0%;
+
   }
 
   .row-cols-md-auto > * {
