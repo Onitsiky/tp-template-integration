@@ -1,6 +1,5 @@
 import Button from "./Button";
-import ModalComponent from "./ModalComponent";
-
+import React from "react";
 
 export function Card(props) {
   const { title, children } = props;
@@ -16,7 +15,7 @@ export function Card(props) {
                         {title}
                     </div>
                     <div className="col-1">
-                        <ModalComponent/>
+                        <Button label="Add" className="btn btn-primary" />
                     </div>
                 </div>
             </div>

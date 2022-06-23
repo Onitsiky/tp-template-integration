@@ -1,4 +1,5 @@
 import Button from "./Button";
+import React from "react";
 
 export function Navbar(props) {
   const { toggleSidebarClass } = props;

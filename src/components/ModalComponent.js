@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MyInput from "./Input";
 import Modal from "react-modal";
+import React from "react";
 
 
 export default function ModalComponent(){
