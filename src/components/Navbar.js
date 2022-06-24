@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export function Navbar(props) {
   const { toggleSidebarClass } = props;
   return (
@@ -21,13 +23,7 @@ export function Navbar(props) {
             aria-label="Search for..."
             aria-describedby="btnNavbarSearch"
           />
-          <button
-            className="btn btn-primary"
-            id="btnNavbarSearch"
-            type="button"
-          >
-            <i className="fas fa-search"></i>
-          </button>
+          <Button id="btnNavbarSearch" label={<i className="fas fa-search"></i> } className="btn btn-primary"/>
         </div>
       </form>
       <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

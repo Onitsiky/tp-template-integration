@@ -1,7 +1,20 @@
 import "./style.css";
+import {useState} from "react";
+import axios from "axios";
 
 export function EmployeeList(props) {
-  const { items } = props;
+  const [user,setUSer] = useState([]);
+  const promise = axios.get("http://jsonplaceholder.typicode.com/users");
+
+  if(user.length == 0){
+    promise.then((resp) => {
+      setUSer(resp.data);
+      console.log(resp);
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+
   return (
     <div className="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
       <div className="dataTable-top">
@@ -32,32 +45,35 @@ export function EmployeeList(props) {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Website</th>
+              <th>Company</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Website</th>
+              <th>Company</th>
             </tr>
           </tfoot>
           <tbody>
-            {(items || []).map((item) => (
-              <tr key={item.name}>
+            {(user || []).map((item) => (
+              <tr key={`${item.name}-${item.phone}`}>
                 <td>{item.name}</td>
-                <td>{item.position}</td>
-                <td>{item.office}</td>
-                <td>{item.age}</td>
-                <td>{item.startDate}</td>
-                <td>{item.salary}</td>
+                <td>{item.username}</td>
+                <td>{item.email}</td>
+                <td>{`${item.address.street}-${item.address.city}`}</td>
+                <td>{item.phone}</td>
+                <td>{item.website}</td>
+                <td>{item.company.name}</td>
               </tr>
             ))}
           </tbody>

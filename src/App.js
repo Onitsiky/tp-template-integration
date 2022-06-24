@@ -5,19 +5,9 @@ import { Breadcrumb } from "./components/Breadcrumb";
 import { EmployeeList } from "./components/List";
 import { Footer } from "./components/Footer";
 import { Card } from "./components/Card";
-import { faker } from "@faker-js/faker";
 import { useState } from "react";
 
 function App() {
-  const employees = new Array(15).fill(null).map((_) => ({
-    name: faker.name.findName(),
-    position: faker.company.bsNoun(),
-    office: faker.address.cityName(),
-    age: faker.random.numeric(2),
-    startDate: new Date().toISOString().split("T")[0],
-    salary: faker.random.numeric(6),
-  }));
-
   const [sidebarClass, setSidebarClass] = useState("sb-nav-fixed");
 
   function toggleSidebarClass() {
@@ -50,7 +40,7 @@ function App() {
                 .
               </Card>
               <Card title="DataTable Example">
-                <EmployeeList items={employees} />
+                <EmployeeList />
               </Card>
             </div>
           </main>
