@@ -1,4 +1,3 @@
-
 export default function Button(props){
     const {className,id,label,event} = props;
     return(

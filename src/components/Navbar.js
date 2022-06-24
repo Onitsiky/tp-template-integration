@@ -1,4 +1,8 @@
 import Button from "./Button";
+<<<<<<< HEAD
+=======
+import React from "react";
+>>>>>>> 342f8d9fa86f4aa10e755c257dec52bc1dd9a232
 
 export function Navbar(props) {
   const { toggleSidebarClass } = props;

@@ -17,7 +17,6 @@ export function EmployeeList(props) {
       console.error(error);
     });
   }
-
   return (
     <div className="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
       <div className="dataTable-top">

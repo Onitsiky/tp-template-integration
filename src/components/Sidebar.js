@@ -1,6 +1,6 @@
 import { SidebarMenuHeading } from "./SidebarMenuHeading";
 import { NavLink } from "./NavLink";
-
+import React from "react";
 const sidebarItems = [
   { type: "heading", title: "Core" },
   { type: "navlink", title: "Dashboard", icon: "fas fa-tachometer-alt" },
