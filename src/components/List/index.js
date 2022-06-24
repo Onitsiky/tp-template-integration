@@ -1,8 +1,11 @@
 import "./style.css";
 import {useState} from "react";
 import axios from "axios";
+import Line from "../Line";
 
 export function EmployeeList(props) {
+  const [custom,setCustom] = useState();
+  const [open, setOpen] = useState(false);
   const [user,setUSer] = useState([]);
   const promise = axios.get("http://jsonplaceholder.typicode.com/users");
 
@@ -67,13 +70,35 @@ export function EmployeeList(props) {
           <tbody>
             {(user || []).map((item) => (
               <tr key={`${item.name}-${item.phone}`}>
-                <td>{item.name}</td>
-                <td>{item.username}</td>
-                <td>{item.email}</td>
-                <td>{`${item.address.street}-${item.address.city}`}</td>
-                <td>{item.phone}</td>
-                <td>{item.website}</td>
-                <td>{item.company.name}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{item.name}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{item.username}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{item.email}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{`${item.address.street}-${item.address.city}`}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{item.phone}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{item.website}</td>
+                <td onClick={() => {
+                  setOpen(true);
+                  setCustom(item);
+                }}>{item.company.name}</td>
+                {open && <Line isOpen={setOpen} val={custom}/>}
               </tr>
             ))}
           </tbody>

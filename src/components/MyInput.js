@@ -1,5 +1,5 @@
 export default function MyInput(props){
-    const {type,name} = props;
+    const {type,name,onChange} = props;
     return(
       <>
           <span>{name}</span> <br/>
