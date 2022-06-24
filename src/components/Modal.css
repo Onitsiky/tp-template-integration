@@ -3,7 +3,7 @@ body, html {
     padding: 0;
 }
 
-.my-modal {
+.custom-modal {
     top: 50%;
     left: 50%;
     outline: none;
@@ -15,12 +15,11 @@ body, html {
     background: rgb(236, 233, 233);
 }
 
-.modal-overlay {
+.custom-overlay {
     width: 80%;
     height: 100%;
     top: 0;
     left: auto;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.78);
-    transform: scale(1);
 }

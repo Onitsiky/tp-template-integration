@@ -2,6 +2,7 @@ import { useState } from "react";
 import MyInput from "./Input";
 import Modal from "react-modal";
 import React from "react";
+import './modal.css'
 
 
 export default function ModalComponent(){
@@ -14,10 +15,10 @@ export default function ModalComponent(){
            <button className="btn btn-primary" onClick={OpenModal}>
            Add
            </button> 
-           <Modal className='my-modal' 
-           overlayClassName='modal-overlay' 
+           <Modal className='custom-modal' 
+           overlayClassName='custom-overlay' 
            onRequestClose={OpenModal}
-           contentLabel="Tiny modal"
+           contentLabel="Tiny nomadic modal popover"
            isOpen={show}
            >
             <div>
